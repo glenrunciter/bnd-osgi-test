@@ -1,0 +1,3 @@
+testOSGi {
+    dependsOn ':bndtest.sample.test.fragment:jar'
+}

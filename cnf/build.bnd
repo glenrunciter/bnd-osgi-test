@@ -1,0 +1,14 @@
+#
+# This file is left open for you to define your macros
+#
+
+-plugin.9x.enroute.distro = \
+	 aQute.bnd.deployer.repository.FixedIndexedRepo;\
+	 locations=https://bndtools.ci.cloudbees.com/job/bnd.next/600/artifact/dist/bundles/index.xml.gz;\
+	 name=Distro
+	 
+-plugin.5.MvnRepo:  \
+	aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+		releaseUrls=http://central.maven.org/maven2/; \
+		pom=${build}/mvnrepo.xml; \
+		name=MvnRepo

@@ -1,0 +1,16 @@
+Private-Package: bndtest.sample.internal
+Export-Package: bndtest.sample
+Bundle-Name: Sample Bnd Bundle
+
+Test-Cases: ${test-cases}
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=bndtest.sample)',\
+	osgi.identity;filter:='(&(osgi.identity=osgi.enroute.junit.wrapper)(version>=4.12.0))',\
+	osgi.identity;filter:='(&(osgi.identity=osgi.enroute.hamcrest.wrapper)(version>=1.3.0))'
+-runbundles: \
+	bndtest.sample;version=snapshot,\
+	org.apache.felix.log;version='[1.0.1,1.0.2)',\
+	osgi.enroute.hamcrest.wrapper;version='[1.3.0,1.3.1)',\
+	osgi.enroute.junit.wrapper;version='[4.12.0,4.12.1)',\
+	bndtest.sample.test.fragment;version=latest
